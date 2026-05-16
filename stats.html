@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Habit Builder — Statistics</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/app.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="app-wrapper">
+
+    <header class="app-header" style="padding-bottom:20px">
+      <div class="header-content">
+        <div>
+          <h2 class="header-title">📊 Statistics</h2>
+          <p class="header-sub">Your performance overview</p>
+        </div>
+        <div class="header-actions">
+          <button class="icon-btn" id="themeToggle">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+
+      <!-- Summary cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-emoji">📝</div>
+          <div class="stat-value" id="totalHabits">0</div>
+          <div class="stat-label">Total Habits</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-emoji">✅</div>
+          <div class="stat-value" id="completedToday">0</div>
+          <div class="stat-label">Done Today</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-emoji">🎯</div>
+          <div class="stat-value" id="successRate">0%</div>
+          <div class="stat-label">Success Rate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-emoji">🔥</div>
+          <div class="stat-value" id="bestStreak">0d</div>
+          <div class="stat-label">Best Streak</div>
+        </div>
+      </div>
+
+      <!-- Range selector -->
+      <div class="range-tabs">
+        <button class="range-tab active" onclick="setRange(7, this)">7 Days</button>
+        <button class="range-tab" onclick="setRange(14, this)">14 Days</button>
+        <button class="range-tab" onclick="setRange(30, this)">30 Days</button>
+      </div>
+
+      <!-- Bar chart -->
+      <div class="chart-card">
+        <div class="chart-title">Daily Completions</div>
+        <div class="bar-chart" id="barChart"></div>
+        <div class="bar-labels" id="barLabels"></div>
+      </div>
+
+      <!-- Heatmap -->
+      <div class="chart-card">
+        <div class="chart-title">Completion Heatmap (Last 28 days)</div>
+        <div class="heatmap" id="heatmap"></div>
+      </div>
+
+      <!-- Streak leaderboard -->
+      <div class="chart-card">
+        <div class="chart-title">Streak Leaderboard 🏆</div>
+        <div id="streakList"></div>
+      </div>
+
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-btn" onclick="goPage('today.html')">
+        <span class="nav-icon">🏠</span><span class="nav-label">Home</span>
+      </button>
+      <button class="nav-btn" onclick="goPage('habits.html')">
+        <span class="nav-icon">📋</span><span class="nav-label">Habits</span>
+      </button>
+      <button class="fab" onclick="goPage('today.html')">+</button>
+      <button class="nav-btn active" onclick="goPage('stats.html')">
+        <span class="nav-icon">📊</span><span class="nav-label">Stats</span>
+      </button>
+      <button class="nav-btn" onclick="goPage('settings.html')">
+        <span class="nav-icon">⚙️</span><span class="nav-label">Settings</span>
+      </button>
+    </nav>
+  </div>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/habits.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/stats.js"></script>
+</body>
+</html>

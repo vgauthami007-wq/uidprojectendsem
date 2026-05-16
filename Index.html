@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Habit Builder — Login</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/login.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Animated background blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <!-- Floating particles -->
+  <div class="particles" id="particles"></div>
+
+  <div class="login-wrapper">
+    <div class="login-card" id="loginCard">
+
+      <!-- Brand -->
+      <div class="brand">
+        <div class="brand-icon">🔥</div>
+        <h1 class="brand-title">Habit Builder</h1>
+        <p class="brand-sub">Build better habits every day</p>
+      </div>
+
+      <!-- Rotating Quote -->
+      <div class="quote-box" id="quoteBox">
+        <p class="quote-text" id="quoteText"></p>
+        <p class="quote-author" id="quoteAuthor"></p>
+        <div class="quote-dots" id="quoteDots"></div>
+      </div>
+
+      <!-- Login Form -->
+      <div id="loginForm">
+        <div class="input-group">
+          <span class="input-icon">📧</span>
+          <input type="email" id="emailInput" class="form-input" placeholder="Email address" autocomplete="off" />
+        </div>
+        <div class="input-group">
+          <span class="input-icon">🔒</span>
+          <input type="password" id="passwordInput" class="form-input" placeholder="Password" />
+          <span class="toggle-pass" id="togglePass">👁️</span>
+        </div>
+        <p class="error-msg" id="errorMsg"></p>
+        <button class="btn-login" id="loginBtn" onclick="handleLogin()">
+          <span>Login</span>
+          <span class="btn-arrow">→</span>
+        </button>
+        <p class="forgot-link" onclick="showForgot()">Forgot password?</p>
+        <p class="demo-hint">Demo: any email + 4+ char password</p>
+      </div>
+
+      <!-- Forgot Password Form -->
+      <div id="forgotForm" style="display:none">
+        <p class="forgot-desc">Enter your email to receive a reset link.</p>
+        <div class="input-group">
+          <span class="input-icon">📧</span>
+          <input type="email" id="forgotEmail" class="form-input" placeholder="Your email" />
+        </div>
+        <button class="btn-login" onclick="sendReset()">Send Reset Link</button>
+        <p class="forgot-link" onclick="showLogin()">← Back to login</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/quotes.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/particles.js"></script>
+</body>
+</html>

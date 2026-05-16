@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Habit Builder — My Habits</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/app.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="app-wrapper">
+
+    <header class="app-header" style="padding-bottom:20px">
+      <div class="header-content">
+        <div>
+          <h2 class="header-title">My Habits</h2>
+          <p class="header-sub">All your tracked habits</p>
+        </div>
+        <div class="header-actions">
+          <button class="icon-btn" id="themeToggle" title="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+
+      <!-- Search bar -->
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" id="searchInput" placeholder="Search habits..." oninput="filterHabits()" />
+      </div>
+
+      <!-- Sort tabs -->
+      <div class="sort-tabs">
+        <button class="sort-tab active" onclick="sortHabits('name', this)">A–Z</button>
+        <button class="sort-tab" onclick="sortHabits('streak', this)">🔥 Streak</button>
+        <button class="sort-tab" onclick="sortHabits('completion', this)">✅ Done</button>
+      </div>
+
+      <div id="allHabitsList"></div>
+
+      <div class="empty-state" id="emptyState" style="display:none">
+        <div class="empty-emoji">🌱</div>
+        <p>No habits found. Add one from the Home screen!</p>
+      </div>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-btn" onclick="goPage('today.html')">
+        <span class="nav-icon">🏠</span><span class="nav-label">Home</span>
+      </button>
+      <button class="nav-btn active" onclick="goPage('habits.html')">
+        <span class="nav-icon">📋</span><span class="nav-label">Habits</span>
+      </button>
+      <button class="fab" onclick="goPage('today.html')">+</button>
+      <button class="nav-btn" onclick="goPage('stats.html')">
+        <span class="nav-icon">📊</span><span class="nav-label">Stats</span>
+      </button>
+      <button class="nav-btn" onclick="goPage('settings.html')">
+        <span class="nav-icon">⚙️</span><span class="nav-label">Settings</span>
+      </button>
+    </nav>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/habits.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/habits-page.js"></script>
+</body>
+</html>
